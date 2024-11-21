@@ -29,9 +29,13 @@ const FileUpload = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:5000/upload", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const response = await axios.post(
+        "https://invoice-manage-api.onrender.com/upload",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
       setLoading(false);
       setSuccess(true);
       console.log("Response data:", response.data); 
